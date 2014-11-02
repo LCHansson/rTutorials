@@ -2,7 +2,14 @@
 # The following datasets are used in this script:
 # - iris (base)
 # - airquality (base)
-# - 
+
+## Inspection ----
+str(letters)
+str(iris$Species)
+str(iris)
+
+head(iris)
+tail(iris, n = 3)
 
 ## Summarization ----
 # summary() can be used to describe vectors...
@@ -17,7 +24,8 @@ summary(iris)
 ## Aggregation ----
 # Use aggregate() for quick summarization of data.
 # This function can use the formula() object. This is a slightly more complex way of
-# looking at data, but can be very rewarding when 
+# looking at data, but can be a very efficient tool to gain slightly more complex
+# insights on the nature of data.
 aggregate(. ~ Species, data = iris, FUN = mean)
 aggregate(. ~ Month, data = airquality, FUN = sum)
 
@@ -66,7 +74,4 @@ dim(myDF)
 myDF <- airquality
 require(Hmisc)
 myDF$Solar.R <- impute(myDF$Solar.R, fun = median)
-
-
-
 
